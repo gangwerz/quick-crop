@@ -1,0 +1,8 @@
+/target
+/out
+/.vscode
+perf.data*
+flamegraph.svg
+README.pdf
+/pictures
+/images

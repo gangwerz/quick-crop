@@ -1,0 +1,37 @@
+[package]
+name = "imager"
+version = "0.1.1"
+edition = "2021"
+authors = ["Zach Gangwer <zach.gangwer@pwccmarketplace.com>"]
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4.24"
+env_logger = "0.10.0"
+glob = "0.3.1"
+image = "0.24.6"
+imageproc = "0.23.0"
+rayon = "1.7.0"
+
+[profile.dev]
+debug = true
+opt-level = 1
+incremental = true
+
+[profile.release]
+debug = true
+opt-level = 3
+lto = true
+incremental = false
+
+[profile.bench]
+debug = true
+opt-level = 0
+lto = true
+incremental = false
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
